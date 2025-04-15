@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Hobbies</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar nav a.active {
+  color: #0077ff;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100vw;
+  height: 100%;
+  gap: 2px;
+}
+
+.hobby-card {
+  background-color: #000;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hobby-card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hobby-card video,
+.hobby-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* 👇 Hover effect */
+.hobby-card:hover video,
+.hobby-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Create a fullscreen overlay */
+.fullscreen-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  transform: scale(0.95);
+}
+
+.fullscreen-preview.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fullscreen-preview video,
+.fullscreen-preview img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #999;
+  font-size: 0.85rem;
+  background: #f8f8f8;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">My Portfolio</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html" class="active">Hobbies</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Grid Section -->
+  <section class="hero">
+    <div class="hobby-grid">
+      <!-- Video or Image Cards -->
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DCeHR31oJrY/?igsh=MThqeTZ5a3l1a2J6eQ==" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/1.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DIY7ofAspKx/?igsh=M3gwMnFneWl2ZXVt" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/2.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DINxGbLMLaL/?igsh=MXNnbDZ5bG52Mjdxbw==" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/3.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DHShIFlyznH/?igsh=MW83cGtwbnh4YWpvag==" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/4.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DHQMlr1S_aF/?igsh=MW1vMGZ1enFhc3ppNw==" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/5.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DHOus8MMp2p/?igsh=dnB3anpkNG5tNWU5" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/6.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DHIAmVPClAL/?igsh=MTNpMXN6YWhxdGQyNw==" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/7.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DGfauCNS-ms/?igsh=MXA3NW0zY2d6YWF6dw==" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/8.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <div class="hobby-card">
+        <a href="https://www.instagram.com/reel/DF29gO4sL4y/?igsh=MWh6encya2l1ODU1bg==" target="_blank">
+          <video autoplay muted loop playsinline>
+            <source src="videos/9.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Samiksha's Portfolio. All rights reserved.
+  </footer>
+  <div id="fullscreenPreview" class="fullscreen-preview" onclick="closePreview(event)">
+    <span class="close-btn" onclick="closePreview(event)">&times;</span>
+    <video id="fullscreenVideo" autoplay muted loop playsinline></video>
+    <img id="fullscreenImg" style="display: none;" />
+  </div>
+  
+  <script>
+    const fullscreenPreview = document.getElementById("fullscreenPreview");
+    const fullscreenVideo = document.getElementById("fullscreenVideo");
+    const fullscreenImg = document.getElementById("fullscreenImg");
+  
+    document.querySelectorAll(".hobby-card video").forEach((video) => {
+      video.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        fullscreenImg.style.display = "none";
+        fullscreenVideo.src = video.querySelector("source").src;
+        fullscreenVideo.style.display = "block";
+        fullscreenPreview.classList.add("active");
+      });
+    });
+  
+    document.querySelectorAll(".hobby-card img").forEach((img) => {
+      img.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        fullscreenVideo.style.display = "none";
+        fullscreenImg.src = img.src;
+        fullscreenImg.style.display = "block";
+        fullscreenPreview.classList.add("active");
+      });
+    });
+  
+    function closePreview(e) {
+      if (e && e.target !== fullscreenPreview && !e.target.classList.contains('close-btn')) return;
+      fullscreenPreview.classList.remove("active");
+      fullscreenVideo.pause();
+      fullscreenVideo.currentTime = 0;
+    }
+  
+    // Close on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closePreview();
+      }
+    });
+  </script>
+  
+</body>
+</html>

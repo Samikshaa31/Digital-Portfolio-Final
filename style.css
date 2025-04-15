@@ -1,0 +1,325 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  
+  /* Navbar */
+  header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+  }
+  
+  .logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+  
+  nav a {
+    margin-left: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: color 0.2s;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    color: #e63946;
+  }
+  
+  /* Hero Section with Video and Profile */
+  .hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.4); /* Light overlay for dark text */
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e63946;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #111;
+  }
+  
+  .hero-text h1 span {
+    color: #e63946;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f8f8f8;
+    color: #555;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  
+  /* Simple fade-in animation */
+  .fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+
+  /* Smooth Hover Underline for Navbar Links */
+nav a {
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #e63946;
+    transition: width 0.3s ease;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Profile Image Hover Effect */
+  .profile-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Hero Text Entry Animation */
+  .hero-content.fade-in {
+    animation: fadeInSlideUp 1.2s ease-out both;
+  }
+  
+  @keyframes fadeInSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Button Style (optional for CTA) */
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #e63946;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .btn:hover {
+    background-color: #c72f3c;
+    transform: translateY(-3px);
+  }
+  
+  .about-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+    width: 90%;
+    padding: 40px;
+    line-height: 1.7;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .about-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e63946;
+    display: inline-block;
+  }
+  
+  
+  .about-section p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+
+
+
+  
+
+
+  .projects-section {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 30px 60px;
+    text-align: center;
+  }
+  
+  .projects-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #e63946;
+    display: inline-block;
+  }
+  
+  .projects-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap; /* Keeps everything in one row */
+    overflow-x: auto;   /* Scrolls horizontally on smaller screens */
+    padding-bottom: 20px;
+  }
+  
+  
+  .project-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .project-card h3 {
+    color: #e63946;
+    margin-bottom: 10px;
+  }
+  
+  .project-card p {
+    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .project-card .btn {
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .project-card .btn:hover {
+    background-color: #c12f3b;
+    transform: translateY(-2px);
+  }
+  
+
+  .navbar {
+    position: relative;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+  }
+  
+
